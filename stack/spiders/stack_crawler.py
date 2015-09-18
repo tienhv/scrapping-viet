@@ -109,7 +109,9 @@ class StackCrawlerSpider(CrawlSpider):
                 img = urllib.urlopen(imgurl)
                 img_data = img.read()
                 b64 = base64.b64encode(img_data)
-                user_images[img_name] = b64
+                #dont store image any more, but store the link to images
+                #user_images[img_name] = b64
+                user_images[img_name] = img['src']
         user['user_images'] = user_images
         yield user        
         
