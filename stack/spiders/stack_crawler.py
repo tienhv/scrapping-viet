@@ -111,7 +111,7 @@ class StackCrawlerSpider(CrawlSpider):
                 b64 = base64.b64encode(img_data)
                 #dont store image any more, but store the link to images
                 #user_images[img_name] = b64
-                user_images[img_name] = img['src']
+                user_images[img_name] = imgurl
         user['user_images'] = user_images
         yield user        
         
